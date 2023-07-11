@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Aniversario de amor</title>
+  <style>
+    .container {
+      text-align: center;
+    }
+
+    .message {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .heart {
+      font-size: 50px;
+      color: red;
+      animation: beat 1s infinite alternate;
+    }
+
+    .photos-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .photos-container img {
+      max-width: 300px;
+      margin: 0 10px;
+    }
+
+    @keyframes beat {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+  </style>
+  <script>
+    function mostrarMensaje() {
+      var mensaje = " Feliz aniversario, mi amor! Te amo mucho";
+      var mensajeContainer = document.getElementById("mensajeContainer");
+      var photosContainer = document.getElementById("photosContainer");
+      
+      mensajeContainer.innerHTML = '<span class="heart">&hearts;</span><p class="message">' + mensaje + '</p>';
+      
+      var photos = [
+        'yo.png',
+        'love.png',
+        'ruta_imagen3.jpg'
+      ];
+      
+      photosContainer.innerHTML = '';
+      
+      for (var i = 0; i < photos.length; i++) {
+        var img = document.createElement('img');
+        img.src = photos[i];
+        photosContainer.appendChild(img);
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Aniversario de amor</h1>
+    <button onclick="mostrarMensaje()">Mostrar mensaje</button>
+    <div id="mensajeContainer"></div>
+    <div id="photosContainer" class="photos-container"></div>
+  </div>
+</body>
+</html>
